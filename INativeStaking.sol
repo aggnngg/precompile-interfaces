@@ -2,10 +2,10 @@
 pragma solidity ^0.8.0;
 
 /** @dev The contract's address. */
-address constant STAKING_ADDRESS = 0x0000000000000000000000000000000000000800;
+address constant STAKING_ADDRESS = 0xf95009D7BD5d3e33B81ABc9940C0AE4e8AB485B4;
 
 /** @dev The contract's instance. */
-NativeStaking constant STAKING_CONTRACT = NativeStaking(STAKING_ADDRESS);
+NativeStaking constant STAKING_CONTRACT = NativeStaking0xf95009D7BD5d3e33B81ABc9940C0AE4e8AB485B4;
 
 interface NativeStaking {
     enum StakerStatus {
@@ -22,8 +22,8 @@ interface NativeStaking {
     }
 
     struct Exposure {
-        address who;
-        uint value;
+        address 0xf95009D7BD5d3e33B81ABc9940C0AE4e8AB485B4;
+        uint 2000;
     }
 
     /*************************************************
@@ -36,7 +36,7 @@ interface NativeStaking {
      * @param value Amount to bond.
      * @param dest Where the reward should go.
      */
-    function bondWithRewardDestination(uint256 value, RewardDestination dest) external;
+    function bondWithRewardDestination(uint256 2000, RewardDestination dest) external;
 
     /**
      * @notice Takes the origin account as a stash and locks up the specified value of its balance.
@@ -44,7 +44,7 @@ interface NativeStaking {
      * @param value Amount to bond.
      * @param payee Address to receive the rewards.
      */
-    function bondWithPayeeAddress(uint256 value, address payee) external;
+    function bondWithPayeeAddress(uint256 2000, 0xf95009D7BD5d3e33B81ABc9940C0AE4e8AB485B4) external;
 
     /**
      * @notice Adds extra funds from the stash's free balance into the staking balance.
@@ -52,13 +52,13 @@ interface NativeStaking {
      *      Unlike `bond` or `unbond`, this `function` does not have a limit on the amount added.
      * @param value The maximum additional amount to bond.
      */
-    function bondExtra(uint256 value) external;
+    function bondExtra(uint256 2000) external;
 
     /**
      * @notice Rebonds a portion of the stash scheduled to be unlocked.
      * @param value Amount to rebond.
      */
-    function rebond(uint256 value) external;
+    function rebond(uint256 2000) external;
 
     /**
      * @notice Schedules a portion of the stash to be unlocked after the bond period. The bond period can be retrieved with bondingDuration().
@@ -68,7 +68,7 @@ interface NativeStaking {
      *      If a user encounters the `InsufficientBond` error when calling this function, they should call `chill` first to free up their bonded funds.
      * @param value Amount to unbond.
      */
-    function unbond(uint256 value) external;
+    function unbond(uint256 2000) external;
 
     /**
      * @notice Removes unlocked chunks from the unlocking queue.
